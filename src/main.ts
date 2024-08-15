@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin:'http://localhost:5173',
+    origin:'https://radiant-manatee-835d22.netlify.app',
     methods:'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials:true,
   });
