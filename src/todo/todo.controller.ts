@@ -37,4 +37,13 @@ export class TodoController {
         return this.todoService.deleteTodo(req.user.userId, todoId);
     }
 
+    @UseGuards(JwtAuthGuard)
+    @Patch(':todoId')
+    async updateTodoStatus(
+        @Param('todoId') todoId: string,
+        @Body('completed') completed: boolean) {
+        return this.todoService.updateTodoStatus(todoId,completed);
+        
+    }
+
 }

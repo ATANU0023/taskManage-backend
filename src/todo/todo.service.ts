@@ -88,4 +88,25 @@ export class TodoService {
             }   
         });
     }
+
+    async updateTodoStatus(todoId: string, completed: boolean) {
+        try {
+            console.log(`Updating Todo ID: ${todoId}, Completed: ${completed}`);
+            const updatedTodo = await this.prisma.todo.update({
+                where: {
+                    id: todoId,
+                },
+                data: {
+                    completed: completed,
+                },
+            });
+            console.log("Updated Todo:", updatedTodo);
+            return updatedTodo;
+        } catch (error) {
+            console.error("Error updating todo status:", error);
+            throw new Error("Error updating todo status: " + error.message);
+        }
+    }
+    
+    
 }
