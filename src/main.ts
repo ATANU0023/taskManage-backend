@@ -7,11 +7,10 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin:'https://radiant-manatee-835d22.netlify.app',
+    origin:'  https://radiant-manatee-835d22.netlify.app/',
     methods:'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials:true,
   });
-
   app.useGlobalPipes(new ValidationPipe());
   
   await app.listen(process.env.PORT || 3000);
